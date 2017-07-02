@@ -79,6 +79,20 @@ namespace AutoLog
 
         private void button_login_Click(object sender, EventArgs e)
         {
+            string usfilePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Hcopl", usfilrfo);
+            string psfilePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Hcopl", psfilrfo);
+
+
+            if (File.Exists(psfilePath))
+            {
+                File.Delete(psfilePath);
+
+            }
+            if (File.Exists(usfilePath))
+            {
+                File.Delete(usfilePath);
+
+            }
 
             username = user.Text;
             password = pass.Text;
@@ -89,9 +103,7 @@ namespace AutoLog
             label6.Visible = false;
              label5.Visible = true;
             label5.Text = "Welcome " + user.Text;
-            string usfilePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Hcopl",usfilrfo);
-            string psfilePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDoc‌​uments), "Hcopl",psfilrfo);
-
+            
            
 
             if (checkBox2.Checked)
